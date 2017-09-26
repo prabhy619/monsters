@@ -239,12 +239,12 @@ public:
     //pre_dmg is calculated for attacking monster
     //dmgcalc is calculated for defending monster
     //stab is damage constant dependant on attacking monster's type and attack move's type matching =1.5, else =1
-    int dmgcalc(int pre_dmg, attack move, unsigned float stab = 1){
+    int dmgcalc(int pre_dmg, attack move, unsigned float st = 1){
         //check for accuracy here, again using random number generation from 0 to 50, if < move.accuracy then return(0);
         // <-- insert code here -->
         // else the below code gets executed
         float eff = effect(move.T, t1) * effect(move.T, t2);
-        float dmg = (((pre_dmg / def) / 50) + 2) * stab * eff;
+        float dmg = (((pre_dmg / def) / 50) + 2) * st * eff;
         //Insert a random multiplier (random_number/100) to dmg, where random_number is [85 to 100]
         // <-- insert code here -->
         return(int(dmg));
