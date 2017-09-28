@@ -30,12 +30,12 @@ The Pokemon specific codes should continue to exist and evolve for referencing u
 If functions &/or mechanics can't be merged with the original one a new branch will be created to accomodate the new ones with adjusted base classes and functions
 Please make a fork if you wish to adapt the framework for a game by combining it with some external (non-standard C/C++) library.
 
-##Contributions
+## Contributions
 This project is open to contributions, feel free to signal errors with issues or directly correct the errors with pull-requests.
 Contributions can be checked from:
 https://github.com/Danpar97/monsters/contributors
 
-##Questions
+## Questions
 Feel free to ask any questions by adding issues or commenting sections.
 
 ## Disclaimer
