@@ -26,7 +26,7 @@ enum TYPE{
 struct attack{
     TYPE T;
     unsigned int power;
-    unsigned float accuracy;
+    float accuracy;
 };
 
 //calculating a damage constant
@@ -227,7 +227,7 @@ public:
         return(22 * atk * move.power);
     }
     //calculation of stab, ie; a damage calculation constant
-    unsigned float stab(TYPE move){
+    float stab(TYPE move){
         if ((move == t1) || (move == t2)){
             return(1.5);
         } else {
@@ -239,7 +239,7 @@ public:
     //pre_dmg is calculated for attacking monster
     //dmgcalc is calculated for defending monster
     //stab is damage constant dependant on attacking monster's type and attack move's type matching =1.5, else =1
-    int dmgcalc(int pre_dmg, attack move, unsigned float st = 1){
+    int dmgcalc(int pre_dmg, attack move, float st = 1.0){
         //check for accuracy here, again using random number generation from 0 to 50, if < move.accuracy then return(0);
         // <-- insert code here -->
         // else the below code gets executed
@@ -256,7 +256,7 @@ public:
     //element[0] = base stat, element[1] = effort value, IVs have been maxed
     int statcalc(unsigned int b[2], unsigned int a[2], unsigned int d[2], unsigned int s[2]){
         //for base HP
-        unsigned float temp = ((31 + (2 * b[0]) + (b[1] / 4)) * 2) + 60;
+        float temp = ((31 + (2 * b[0]) + (b[1] / 4)) * 2) + 60;
         bhp = (unsigned int)temp;
         //for attack stat
         temp = ((31 + (2 * a[0]) + (a[1] / 4)) * 2) + 5;
