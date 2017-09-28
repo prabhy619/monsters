@@ -12,15 +12,15 @@ serebii.net
 The program is in ** Alpha stage **, ie; It doesn't function yet.
 
 ## Prerequites
-### * ** 1. ** - * Downloading the source
+### 1. - Downloading the source
 Latest source file is available at:
 For the whole git:
 https://github.com/Danpar97/monsters.git
 For the source file only:
 https://github.com/Danpar97/monsters/blob/master/source/monsters.cpp
-### * ** 2. ** - * Compiling
+### 2. -  Compiling
 Any IDE using GNU C/C++ Compiler
-* Note: Have to test compatibility with Visual C++ *
+* Note: Have to test compatibility with Visual C++
 
 ## Roadmap
 The project is meant to be a basic framework for any game with similar mechanics and thus needs to be able to allow a more general approach than the current Pokemon based.
