@@ -6,10 +6,10 @@ It is based on the First generation of Pokemon games (Red & Blue/Green).
 Many of the initial work has been adapted directly from their in-game mechanics as it is.
 
 ## Reference for the mechanics
-serebii.net
+https://serebii.net/games/mechanics.shtml
 
 ## Current Status
-The program is in ** Alpha stage **, ie; It doesn't function yet.
+The program is in **Alpha stage**, ie; It doesn't function yet.
 
 ## Prerequites
 ### 1. - Downloading the source
