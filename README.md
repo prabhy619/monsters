@@ -4,7 +4,7 @@ Basic Framework for a Turn-based combat game.
 ## Origin
 It is based on the First generation of Pokemon games (Red & Blue/Green).
 Many of the initial work has been adapted directly from their in-game mechanics as it is.
-**Caution:** *It is based on my Highschool project which was originally written in C89. Some parts are still in need of being updated for C++11/C++14.*
+**Caution:** *It is based on my Highschool project which was originally written in C89. Some parts are still in need of being updated for C++11/C++14. The most recent working (and stripped) version is name EDITPKM-1.CPP*
 
 ## Reference for the mechanics
 https://serebii.net/games/mechanics.shtml
