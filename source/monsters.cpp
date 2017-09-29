@@ -25,6 +25,7 @@ enum TYPE{
 
 struct attack{
     TYPE T;
+    std::string aname;
     unsigned int power;
     float accuracy;
 };
@@ -188,13 +189,14 @@ class monster{
     //just for ease of reading. Members are initialised as private by default if no access specifier is used
 private:
     //longest base name is 12 letters, ie; size = 13, prefix "Mega " = 5 & suffix " X" = 3
-    char name[21];
+    char mname[21];
+    //std::string mname; //to be converted
     unsigned int bhp, hp, atk, def, speed;
     TYPE t1, t2;
 public:
     //Functions for returning object values
     char *getname(){
-        return(name);
+        return(mname);
     }
     unsigned int gethp(){
         return(hp);
@@ -217,7 +219,7 @@ public:
     int update_info(char nm[21], TYPE a1, TYPE a2){
         t1 = a1;
         t2 = a2;
-        strcpy(name, nm);
+        strcpy(mname, nm);
         return(0);
     }
     //calculated for attacking monster
@@ -357,5 +359,8 @@ player rec_pl(){
 int main() {
     std::cout << "Hello, World!" << std::endl;
     std::string st;
+    std::cout << "Enter a string: ";
+    std::cin >> st;
+    std::cout << st << std::endl;
     return 0;
 }

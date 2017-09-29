@@ -21,7 +21,8 @@ For the source file only:
 https://github.com/Danpar97/monsters/blob/master/source/monsters.cpp
 
 ### 2. -  Compiling
-Any IDE using GNU C/C++ Compiler
+* Use gcc/g++ on Mac/Linux (Unix-like OS)
+* Use mingw on Microsoft Windows
 **Note:** *Have to test compatibility with Visual C++.*
 
 ## Roadmap
