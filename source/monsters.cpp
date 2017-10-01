@@ -283,14 +283,10 @@ struct player{
 /*
 //considered storage form for password
 //a proper encryption method will be added to replace this
-
-char *rockup(char ar[], int inc){
-    char nsr[int(pow(int(sqrt(strlen(ar))),2))];
-    for (int i = 0; i < strlen(ar); ++i) {
-        nsr[i] = ar[i+int(sqrt(strlen(ar)))];
-        nsr[i] = char(int(nsr[i]) + inc);
-    }
-    return(nsr);
+std::string crpyt(std::string raw){
+    std::string cr;
+    //insert algo for encryption
+    return(cr);
 }
 */
 
