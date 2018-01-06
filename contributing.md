@@ -126,16 +126,16 @@ void FooBar() {
 }
 ```
 
-##Typical Git Workflow
+## Typical Git Workflow
 
 This is a guide to a typical Git workflow with monsters. It covers forking from the main repository, creating a branch, keeping your branch up to date with the main repository, resolving conflicts, and merging back into the main repository. It’s not meant to be a hard-and-fast set of rules. However, if you follow something along these lines, you’ll be less likely to piss people off.
 It’s appreciated if every single commit in a branch on its own compiles on all supported platforms (Windows, Linux, and OS X) and doesn’t cause any regressions if the commits after it were left unmerged. We understand that with early development, sometimes it’s easier to commit early-and-often, and sometimes you may unintentionally break things (and then later fix them in your branch). If this is part of your workflow, we expect appropriate use of Git rebase to squash broken commits and resolve merge conflicts. If you don’t know how Git rebase works, please read this article before developing for monsters.
 
-###Terminology
+### Terminology
 * `upstream`: [Main project repository](https://github.com/monsters-emu/monsters)
 * `origin`: [Your GitHub forked project repository](e.g. https://github.com/bunnei/monsters)
 
-###Before you begin
+### Before you begin
 * GitHub fork the project
 * Clone your GitHub fork locally
 '''sh
@@ -156,7 +156,7 @@ git config --global user.name "your-username";
 git config --global user.email your-email@example.com
 '''
 
-###Create a new branch
+### Create a new branch
 
 * Create your branch from the latest upstream/master (Note: please format-branch-names-like-this)
 '''sh
@@ -230,5 +230,5 @@ git push origin new-branch-name --force
 If GitHub says the branch cannot be merged automatically, you’ve likely done something incorrectly (e.g. you did not fully rebase changes from upstream/master into your branch). If things don’t work for you, don’t hesitate to ask us for help @ #monsters on freenode. Mastering Git is not as easy as it might sound, but we’ll happily help you get started.
 
 
-#Credits
+# Credits
 Thanks to [monsters-emu/monsters](https://github.com/monsters-emu/monsters) -> Wiki for such a great git workflow guide
