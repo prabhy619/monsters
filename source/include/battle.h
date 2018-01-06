@@ -4,7 +4,7 @@
 
 #ifndef _BATTLE_H
 #define _BATTLE_H 1
-class battle: private monster{
+class battle: private monster {
     unsigned int m_maxhp, m_hp, m_attack, m_defence, m_speed;
     move m_atks[4];
 public:
