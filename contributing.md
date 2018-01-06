@@ -138,79 +138,71 @@ It’s appreciated if every single commit in a branch on its own compiles on all
 ### Before you begin
 * GitHub fork the project
 * Clone your GitHub fork locally
-
-'''sh
+```sh
 git clone https://github.com/your-username/monsters.git
-'''
+```
 * Grab the submodules
-
-'''sh
+```sh
 git submodule update --init --recursive
-'''
+```
 * Set your upstream to the main project repository
-
-'''sh
+```sh
 git remote add upstream https://github.com/monsters-emu/monsters.git
-'''
+```
 
 * Set your Git identity configuration
-
-'''sh
+```sh
 git config --global user.name "your-username";
 git config --global user.email your-email@example.com
-'''
+```
 
 ### Create a new branch
 
 * Create your branch from the latest upstream/master (Note: please format-branch-names-like-this)
-
-'''sh
+```sh
 git fetch upstream && git checkout -b new-branch-name upstream/master
-'''
+```
 
 * Push your new branch to origin (required later for a pull request)
 
-'''sh
+```sh
 git push origin new-branch-name
-'''
+```
 
 __Scenario A: You did some work in your branch… Then, someone committed something to upstream/master that you want!__
 
 * Make sure you’re on your branch
 
-'''sh
+```sh
 git checkout new-branch-name
-'''
+```
 
 * Rebase upstream/master onto it. With the rebase, move all of your changes to the top, and put all of the new master changes immediately after where you branched from. The goal should be that the branch now appears as though you just created it from upstream/master, and then committed all of your new stuff.
 
-'''sh
+```sh
 git rebase upstream/master
-'''
+```
 
 __Scenario B: You did some more work in your branch… Then, someone committed something to upstream/master that will cause conflicts when trying to get the branch merged back to upstream/master!__
 
 * From your branch, rebase upstream/master
-
-'''sh
+```sh
 git checkout new-branch-name
 git rebase -i upstream/master
-'''
+```
 
 Your branch is getting near completion, now you’re ready for a pull request!
 
 * From your branch, rebase upstream/master
-
-'''sh
+```sh
 git checkout new-branch-name
 git rebase -i upstream/master
-'''
+```
 
 * Update origin/new-branch-name
-
-'''sh
+```sh
 git push origin new-branch-name --force
-'''
+```
 
 * Create the pull request on GitHub to merge origin/new-branch-name into upstream/master
 
@@ -221,23 +213,21 @@ Gracefully receive feedback from the team
 Once your pull request is ready to be merged…
 
 * From your branch, interactive rebase to squash all of the new commits (as a result of the pull request feedback) into the commits that they were addressing
-
-'''sh
+```sh
 git checkout new-branch-name
 git rebase -i HEAD~n
-'''
+```
 
 * Rebase upstream/master onto your branch to ensure that you have any changes made since your pull request was created
-
-'''sh
+```sh
 git rebase -i upstream/master
-'''
+```
 
 * Update origin/new-branch-name
 
-'''sh
+```sh
 git push origin new-branch-name --force
-'''
+```
 
 * Merge your branch in
 * Always merge using the >merge< button in the GitHub pull request
