@@ -16,7 +16,7 @@ monsters is a brand new project, so we have a great opportunity to keep things c
 * Avoid the use of C-style casts and instead prefer C++-style `static_cast` and `reinterpret_cast`. Try to avoid using `dynamic_cast`. Never use `const_cast`. The only exception to this rule is for casting between two numeric types, where C-style casts are encouraged for brevity and readability.
 
 ### Naming Rules
-* Functions: `PascalCase`
+* Functions: `camelCase`
 * Variables: `lower_case_underscored`. Prefix with `g_` if global.
 * Classes: `PascalCase`
 * Files and Directories: `lower_case_underscored`
