@@ -235,4 +235,4 @@ If GitHub says the branch cannot be merged automatically, you’ve likely done s
 
 
 # Credits
-Thanks to [monsters-emu/monsters](https://github.com/monsters-emu/monsters) -> Wiki for such a great git workflow guide
+Thanks to [citra-emu/citra](https://github.com/citra-emu/citra) -> Wiki for such a great git workflow guide
