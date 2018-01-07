@@ -4,47 +4,25 @@
 
 #ifndef _BATTLE_H
 #define _BATTLE_H 1
-class battle: private monster {
-    unsigned int m_maxhp, m_hp, m_attack, m_defence, m_speed;
-    move m_atks[4];
+
+class battle {
+private:
+	static Battle* b_instance;
+
+    Battle() {}
+    Battle(Battle const&) = delete;
+    void operator=(Battle const&) = delete;
+
 public:
-	//setters
-
-	//element[0] = base stat, element[1] = effort value, IVs have been maxed
-    bool StatCalc(unsigned int hp[2], unsigned int atk[2], unsigned int def[2],
-    unsigned int spd[2]){
-        //check sum for element[1]
-        int sum = hp[1] + atk[1] + def[1] + spd[1];
-
-        if ((hp[0] > 180)||(atk[0] > 180)||(def[0] > 180)||(spd[0] > 180){
-        	return(false);
+	static Battle* getInstance(){
+        if(b_instance == NULL){
+            b_instance = new Battle();
         }
-
-        //correction required for the EV spread condition
-        if (sum > 31){
-            std::cout << "Invalid EVs" << std::endl;
-            return(false);
-        }
-
-        //for base HP
-        float temp = ((31 + (2 * _hp[0]) + (_hp[1] / 4)) * 2) + 60;
-        m_max_hp = (unsigned int)temp;
-
-        //for attack stat
-        temp = ((31 + (2 * _atk[0]) + (_atk[1] / 4)) * 2) + 5;
-        m_attack = (unsigned int)temp;
-
-        //for defence stat
-        temp = ((31 + (2 * _def[0]) + (_def[1] / 4)) * 2) + 5;
-        m_defence = (unsigned int)temp;
-
-        //for speed stat
-        temp = ((31 + (2 * _spd[0]) + (_spd[1] / 4)) * 2) + 5;
-        m_speed = (unsigned int)temp;
-
-        m_hp = m_max_hp;
-        return(true);
+        return b_instance;
     }
+	//setters
+    //getters
+
 
     //signed int is used in future consideration of using as a healing move as well
     int getPreDmg(attack move){
@@ -82,11 +60,39 @@ public:
         return(hp);
     }
 
-    //getters
+    //element[0] = base stat, element[1] = effort value, IVs have been maxed
+    bool StatCalc(unsigned int hp[2], unsigned int atk[2], unsigned int def[2], unsigned int spd[2]){
+        //check sum for element[1]
+        int sum = hp[1] + atk[1] + def[1] + spd[1];
 
+        if ((hp[0] > 180)||(atk[0] > 180)||(def[0] > 180)||(spd[0] > 180){
+	    return(false);
+        }
 
+        //correction required for the EV spread condition
+        if (sum > 31){
+            std::cout << "Invalid EVs" << std::endl;
+            return(false);
+        }
 
-    battle();
-    ~battle();
+        //for base HP
+        float temp = ((31 + (2 * _hp[0]) + (_hp[1] / 4)) * 2) + 60;
+        m_max_hp = (unsigned int)temp;
+
+        //for attack stat
+        temp = ((31 + (2 * _atk[0]) + (_atk[1] / 4)) * 2) + 5;
+        m_attack = (unsigned int)temp;
+
+        //for defence stat
+        temp = ((31 + (2 * _def[0]) + (_def[1] / 4)) * 2) + 5;
+        m_defence = (unsigned int)temp;
+
+        //for speed stat
+        temp = ((31 + (2 * _spd[0]) + (_spd[1] / 4)) * 2) + 5;
+        m_speed = (unsigned int)temp;
+
+        m_hp = m_max_hp;
+        return(true);
+    }
 };
 #endif

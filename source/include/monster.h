@@ -177,7 +177,7 @@ float effect(Type atk, Type mon){
 
 class Move{
     std::string a_name;
-    unsigned int a_power;
+    uint8_t a_power;
     float a_accuracy;
     Type a_t;
 public:
@@ -187,7 +187,7 @@ public:
 		a_name = name;
 	}
 
-	void setPower(unsigned int power){
+	void setPower(uint8_t power){
 		a_power = power;
 	}
 
@@ -204,7 +204,7 @@ public:
 		return(a_name);
 	}
 
-	unsigned int getPower(){
+	uint8_t getPower(){
 		return(a_power);
 	}
 
@@ -218,79 +218,94 @@ public:
 
     Move(){
         a_name = "Struggle";
-        a_power = 100;
+        a_power = 50;
         a_accuracy = 100.00;
         a_t  = NORMAL;
     }
 
     //~Move();
+
+    void operator = (const Move &original){
+        a_name = original.a_name;
+        a_power = original.a_power;
+        a_accuracy = original.a_accuracy;
+        a_t = original.a_t;
+    }
 };
 
 class Monster{
-	std::string m_name;
-	unsigned int m_base_hp, m_base_attack, m_base_defence, m_base_speed;
+    std::string m_name;
+    uint8_t m_base_hp, m_base_attack, m_base_defence, m_base_speed;
     Type m_t[2];
 public:
-	//setters
+    //setters
+    void setName(std::string name){
+	m_name = name;
+    }
 
-	void setName(std::string name){
-		m_name = name;
-	}
+    void setHP(unint8_t hp){
+	m_base_hp = hp;
+    }
 
-	void setHP(unsigned int hp){
-		m_base_hp = hp;
-	}
+    void setAttack(unint8_t attack){
+	m_base_attack = attack;
+    }
 
-	void setAttack(unsigned int attack){
-		m_base_attack = attack;
-	}
+    void setDefence(unint8_t defence){
+	m_base_defence = defence;
+    }
 
-	void setDefence(unsigned int defence){
-		m_base_defence = defence;
-	}
+    void setSpeed(unint8_t speed){
+	m_base_speed = speed;
+    }
 
-	void setSpeed(unsigned int speed){
-		m_base_speed = speed;
-	}
+    void setType(Type type){
+	m_t = type;
+    }
 
-	void setType(Type type){
-		m_t = type;
-	}
+    //getters
 
-	//getters
+    std::string getName(){
+	return(m_name);
+    }
 
-	std::string getName(){
-		return(m_name);
-	}
+    unint8_t getHP(){
+	return(m_base_hp);
+    }
 
-	unsigned int getHP(){
-		return(m_base_hp);
-	}
+    unint8_t getAttack(){
+	return(m_base_attack);
+    }
 
-	unsigned int getAttack(){
-		return(m_base_attack);
-	}
+    unint8_t getDefence(){
+	return(m_base_defence);
+    }
 
-	unsigned int getDefence(){
-		return(m_base_defence);
-	}
+    unint8_t getSpeed(){
+	return(m_base_speed);
+    }
 
-	unsigned int getSpeed(){
-		return(m_base_speed);
-	}
+    Type getType(){
+	return(m_t);
+    }
 
-	Type getType(){
-		return(m_t);
-	}
+    Monster(){
+        m_name = "MissingNo";
+        m_base_hp = 33;
+        m_base_attack = 136;
+        m_base_defence = 6;
+        m_base_speed = 29;
+    }
 
-        Monster(){
-            m_name = "MissingNo";
-            m_base_hp = 33;
-            m_base_attack = 136;
-            m_base_defence = 6;
-            m_base_speed = 29;
-        }
-	//~Monster();
+    //~Monster();
+
+    void operator = (const Monster &original){
+	m_name = original.m_name;
+	m_base_hp = original.m_base_hp;
+	m_base_attack = original.m_base_attack;
+	m_base_defence = original.m_base_defence;
+	m_base_speed = original.m_base_speed;
+    }
 };
 
 #endif

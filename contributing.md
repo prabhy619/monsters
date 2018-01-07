@@ -17,7 +17,7 @@ monsters is a brand new project, so we have a great opportunity to keep things c
 
 ### Naming Rules
 * Functions: `camelCase`
-* Variables: `lower_case_underscored`. Prefix with `g_` if global.
+* Variables: `lower_case_underscored`. Prefix with `G_` if global.
 * Classes: `PascalCase`
 * Files and Directories: `lower_case_underscored`
 * Namespaces: `PascalCase`, `_` may also be used for clarity (e.g. `ARM_InitCore`)
