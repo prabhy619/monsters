@@ -240,7 +240,7 @@ public:
 class Monster{
     std::string m_name;
     uint8_t m_base_hp, m_base_attack, m_base_defence, m_base_speed;
-    type m_t;
+    types m_t;
 public:
     //setters
     void setName(std::string name){
