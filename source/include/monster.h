@@ -289,7 +289,7 @@ public:
 	    return(m_base_speed);
     }
 /*
-    Type getType(){
+    types getType(){
 	    return(m_t);
     }
 */
