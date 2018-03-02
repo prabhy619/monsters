@@ -21,6 +21,10 @@ enum Type{
     STEEL
 };
 
+struct types{
+    Type dual[2];
+};
+
 float effect(Type atk, Type mon){
     if (atk == NORMAL){
         if ((mon == ROCK) || (mon == STEEL)){
@@ -223,72 +227,72 @@ public:
         a_t  = NORMAL;
     }
 
-    //~Move();
+    //~Move() {}
 
     void operator = (const Move &original){
-        a_name = original.a_name;
-        a_power = original.a_power;
-        a_accuracy = original.a_accuracy;
-        a_t = original.a_t;
+        a_name = original.a_name; // original.getName();
+        a_power = original.a_power; // original.getPower();
+        a_accuracy = original.a_accuracy; // original.getAccuracy();
+        a_t = original.a_t; // original.getType();
     }
 };
 
 class Monster{
     std::string m_name;
     uint8_t m_base_hp, m_base_attack, m_base_defence, m_base_speed;
-    Type m_t[2];
+    type m_t;
 public:
     //setters
     void setName(std::string name){
-	m_name = name;
+	    m_name = name;
     }
 
     void setHP(unint8_t hp){
-	m_base_hp = hp;
+	    m_base_hp = hp;
     }
 
     void setAttack(unint8_t attack){
-	m_base_attack = attack;
+	    m_base_attack = attack;
     }
 
     void setDefence(unint8_t defence){
-	m_base_defence = defence;
+	    m_base_defence = defence;
     }
 
     void setSpeed(unint8_t speed){
-	m_base_speed = speed;
+	    m_base_speed = speed;
     }
 
-    void setType(Type type){
-	m_t = type;
+    void setType(type tp[2]){
+	    m_t[0] = tp        
     }
 
     //getters
 
     std::string getName(){
-	return(m_name);
+	    return(m_name);
     }
 
     unint8_t getHP(){
-	return(m_base_hp);
+	    return(m_base_hp);
     }
 
     unint8_t getAttack(){
-	return(m_base_attack);
+	    return(m_base_attack);
     }
 
     unint8_t getDefence(){
-	return(m_base_defence);
+	    return(m_base_defence);
     }
 
     unint8_t getSpeed(){
-	return(m_base_speed);
+	    return(m_base_speed);
     }
-
+/*
     Type getType(){
-	return(m_t);
+	    return(m_t);
     }
-
+*/
     Monster(){
         m_name = "MissingNo";
         m_base_hp = 33;
@@ -300,11 +304,13 @@ public:
     //~Monster();
 
     void operator = (const Monster &original){
-	m_name = original.m_name;
-	m_base_hp = original.m_base_hp;
-	m_base_attack = original.m_base_attack;
-	m_base_defence = original.m_base_defence;
-	m_base_speed = original.m_base_speed;
+	    m_name = original.m_name; // original.getName();
+	    m_base_hp = original.m_base_hp; // original.getHP();
+	    m_base_attack = original.m_base_attack; // original.getAttack();
+	    m_base_defence = original.m_base_defence; // original.getDefence();
+	    m_base_speed = original.m_base_speed; // original.getSpeed();
+        m_t = original.m_t //original.m_t[0];
+        //m_t[1] = //original.m_t[1];
     }
 };
 
