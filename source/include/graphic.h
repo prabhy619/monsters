@@ -2,6 +2,7 @@
 #include "monster.h"
 #endif
 
+/*
 #ifndef  _SDL_h
 #include <SDL2/SDL.h>
 #endif
@@ -12,6 +13,8 @@
 
 #ifndef _GRAPHIC_H
 #define _GRAPHIC_H 2
+#endif
+*/
 
 class Menu{
 public:
@@ -30,5 +33,3 @@ public:
 	Championship();
 	~Championship();
 };
-
-#endif
