@@ -2,4 +2,4 @@
 source/*.o
 
 # Folder containing binary builds
-binary/
+binaries/
