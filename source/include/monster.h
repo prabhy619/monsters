@@ -192,7 +192,7 @@ public:
 	}
 
 	void setAccuracy(float accuracy){
-		a_accuracy = accuracy
+		a_accuracy = accuracy;
 	}
 
 	void setType(Type type){
@@ -212,7 +212,7 @@ public:
 		return(a_accuracy);
 	}
 
-	TYPE getType(){
+	Type getType(){
 		return(a_t);
 	}
 
@@ -223,70 +223,68 @@ public:
         a_t  = NORMAL;
     }
 
-    //~Move() {}
+    //~Move();
 
     void operator = (const Move &original){
-        a_name = original.a_name; // original.getName();
-        a_power = original.a_power; // original.getPower();
-        a_accuracy = original.a_accuracy; // original.getAccuracy();
-        a_t = original.a_t; // original.getType();
+        a_name = original.a_name;
+        a_power = original.a_power;
+        a_accuracy = original.a_accuracy;
+        a_t = original.a_t;
     }
 };
 
 class Monster{
     std::string m_name;
     uint8_t m_base_hp, m_base_attack, m_base_defence, m_base_speed;
-    std::array <Type> m_t;
+    Type m_t;
 public:
     //setters
     void setName(std::string name){
-	    m_name = name;
+	m_name = name;
     }
 
-    void setHP(unint8_t hp){
-	    m_base_hp = hp;
+    void setHP(uint8_t hp){
+	m_base_hp = hp;
     }
 
-    void setAttack(unint8_t attack){
-	    m_base_attack = attack;
+    void setAttack(uint8_t attack){
+	m_base_attack = attack;
     }
 
-    void setDefence(unint8_t defence){
-	    m_base_defence = defence;
+    void setDefence(uint8_t defence){
+	m_base_defence = defence;
     }
 
-    void setSpeed(unint8_t speed){
-	    m_base_speed = speed;
+    void setSpeed(uint8_t speed){
+	m_base_speed = speed;
     }
-
-    void setType(types tp){
-	    m_t = tp        
+    void setType(Type type){
+	m_t = type;
     }
 
     //getters
 
     std::string getName(){
-	    return(m_name);
+	return(m_name);
     }
 
-    unint8_t getHP(){
-	    return(m_base_hp);
+    uint8_t getHP(){
+	return(m_base_hp);
     }
 
-    unint8_t getAttack(){
-	    return(m_base_attack);
+    uint8_t getAttack(){
+	return(m_base_attack);
     }
 
-    unint8_t getDefence(){
-	    return(m_base_defence);
+    uint8_t getDefence(){
+	return(m_base_defence);
     }
 
-    unint8_t getSpeed(){
-	    return(m_base_speed);
+    uint8_t getSpeed(){
+	return(m_base_speed);
     }
-
-    types getType(){
-	    return(m_t);
+    Type getType(){
+	return(m_t);
     }
 
     Monster(){
@@ -300,13 +298,11 @@ public:
     //~Monster();
 
     void operator = (const Monster &original){
-	    m_name = original.m_name; // original.getName();
-	    m_base_hp = original.m_base_hp; // original.getHP();
-	    m_base_attack = original.m_base_attack; // original.getAttack();
-	    m_base_defence = original.m_base_defence; // original.getDefence();
-	    m_base_speed = original.m_base_speed; // original.getSpeed();
-        m_t = original.m_t //original.m_t[0];
-        //m_t[1] = //original.m_t[1];
+	m_name = original.m_name;
+	m_base_hp = original.m_base_hp;
+	m_base_attack = original.m_base_attack;
+	m_base_defence = original.m_base_defence;
+	m_base_speed = original.m_base_speed;
     }
 };
 
