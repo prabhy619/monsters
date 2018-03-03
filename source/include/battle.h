@@ -25,10 +25,10 @@ public:
 
 
     //signed int is used in future consideration of using as a healing move as well
-    int getPreDmg(attack move){
+    int getPreDmg(Move attack){
         // based on level 50, as it's the official level cap in tournaments.
         //Formulae Sourced from serebii.net/games/damage.shtml
-        return(22 * atk * move.power);
+        return(22 * getAttack() atk * attack.getPower());
     }
 
     //calculation of stab, ie; a damage calculation constant

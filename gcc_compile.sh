@@ -13,8 +13,8 @@ W_FLAGS='-Wall -Wextra -Werror -Wfatal-errors -Wpedantic -pedantic-errors -fdiag
 # clear out old object files
 rm ./source/*.o
 
-git log | head -1 > name.txt
+HASH=git log | head -1 | cut -d " " -f2 | cut -c 1-8
 
 # compile
 $CPP -c ./source/main.cpp -o ./source/main.o $W_FLAGS
-$CPP -o ./binaries/Linux_Binary_ ./source/main.o $W_FLAGS
+$CPP -o ./binaries/Linux_Binary_$HASH ./source/main.o $W_FLAGS

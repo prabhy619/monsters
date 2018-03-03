@@ -1,0 +1,5 @@
+# Object files generated at compile time
+source/*.o
+
+# Folder containing binary builds
+binary/

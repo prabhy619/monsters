@@ -21,10 +21,6 @@ enum Type{
     STEEL
 };
 
-struct types{
-    Type dual[2];
-};
-
 float effect(Type atk, Type mon){
     if (atk == NORMAL){
         if ((mon == ROCK) || (mon == STEEL)){
@@ -240,7 +236,7 @@ public:
 class Monster{
     std::string m_name;
     uint8_t m_base_hp, m_base_attack, m_base_defence, m_base_speed;
-    types m_t;
+    std::array <Type> m_t;
 public:
     //setters
     void setName(std::string name){
@@ -263,8 +259,8 @@ public:
 	    m_base_speed = speed;
     }
 
-    void setType(type tp[2]){
-	    m_t[0] = tp        
+    void setType(types tp){
+	    m_t = tp        
     }
 
     //getters
@@ -288,11 +284,11 @@ public:
     unint8_t getSpeed(){
 	    return(m_base_speed);
     }
-/*
+
     types getType(){
 	    return(m_t);
     }
-*/
+
     Monster(){
         m_name = "MissingNo";
         m_base_hp = 33;
