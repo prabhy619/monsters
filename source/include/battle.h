@@ -5,7 +5,7 @@
 #ifndef _BATTLE_H
 #define _BATTLE_H 1
 
-class battle {
+class Battle {
 private:
 	static Battle* b_instance;
 
