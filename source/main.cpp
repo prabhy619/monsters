@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <array>
 #include <fstream>
 //#include "include/battle.h"
 #include "include/graphic.h"

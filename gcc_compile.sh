@@ -11,7 +11,7 @@ CPP='g++'
 W_FLAGS='-Wall -Wextra -Werror -Wfatal-errors -Wpedantic -pedantic-errors -fdiagnostics-show-location=once -std=c++11'
 
 # get hash of the last commit
-hash=$(git log | head -n1 | cut -d " " -f 2 | cut -c 1-4)
+hash=$(git log | head -n1 | cut -d " " -f 2 | cut -c 1-6)
 
 # clear out previous executables
 rm -rf ./binaries/Linux_Binary_*

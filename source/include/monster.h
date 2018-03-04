@@ -181,40 +181,39 @@ class Move{
     float a_accuracy;
     Type a_t;
 public:
-	//setters
+    //setters
+    void setName(std::string name){
+        a_name = name;
+    }
 
-	void setName(std::string name){
-		a_name = name;
-	}
+    void setPower(uint8_t power){
+        a_power = power;
+    }
 
-	void setPower(uint8_t power){
-		a_power = power;
-	}
+    void setAccuracy(float accuracy){
+        a_accuracy = accuracy;
+    }
 
-	void setAccuracy(float accuracy){
-		a_accuracy = accuracy;
-	}
+    void setType(Type type){
+        a_t = type;
+    }
 
-	void setType(Type type){
-		a_t = type;
-	}
+    //getters
+    std::string getName(){
+        return(a_name);
+    }
 
-	//getters
-	std::string getName(){
-		return(a_name);
-	}
+    uint8_t getPower(){
+        return(a_power);
+    }
 
-	uint8_t getPower(){
-		return(a_power);
-	}
+    float getAccuracy(){
+        return(a_accuracy);
+    }
 
-	float getAccuracy(){
-		return(a_accuracy);
-	}
-
-	Type getType(){
-		return(a_t);
-	}
+    Type getType(){
+        return(a_t);
+    }
 
     Move(){
         a_name = "Struggle";
@@ -225,7 +224,7 @@ public:
 
     //~Move();
 
-    void operator = (const Move &original){
+    void operator=(const Move &original){
         a_name = original.a_name;
         a_power = original.a_power;
         a_accuracy = original.a_accuracy;
@@ -236,55 +235,55 @@ public:
 class Monster{
     std::string m_name;
     uint8_t m_base_hp, m_base_attack, m_base_defence, m_base_speed;
-    Type m_t;
+    std::array <Type, 2> m_t;
 public:
     //setters
     void setName(std::string name){
-	m_name = name;
+        m_name = name;
     }
 
     void setHP(uint8_t hp){
-	m_base_hp = hp;
+        m_base_hp = hp;
     }
 
     void setAttack(uint8_t attack){
-	m_base_attack = attack;
+        m_base_attack = attack;
     }
 
     void setDefence(uint8_t defence){
-	m_base_defence = defence;
+        m_base_defence = defence;
     }
 
     void setSpeed(uint8_t speed){
-	m_base_speed = speed;
+        m_base_speed = speed;
     }
-    void setType(Type type){
-	m_t = type;
+    void setType(std::array <Type, 2> type){
+        m_t = type;
     }
 
     //getters
-
     std::string getName(){
-	return(m_name);
+        return(m_name);
     }
 
     uint8_t getHP(){
-	return(m_base_hp);
+        return(m_base_hp);
     }
 
     uint8_t getAttack(){
-	return(m_base_attack);
+        return(m_base_attack);
     }
 
     uint8_t getDefence(){
-	return(m_base_defence);
+        return(m_base_defence);
     }
 
     uint8_t getSpeed(){
-	return(m_base_speed);
+        return(m_base_speed);
     }
-    Type getType(){
-	return(m_t);
+
+    std::array <Type, 2> getType(){
+        return(m_t);
     }
 
     Monster(){
@@ -297,7 +296,7 @@ public:
 
     //~Monster();
 
-    void operator = (const Monster &original){
+    void operator=(const Monster &original){
 	m_name = original.m_name;
 	m_base_hp = original.m_base_hp;
 	m_base_attack = original.m_base_attack;
